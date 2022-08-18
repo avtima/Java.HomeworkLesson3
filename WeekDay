@@ -1,0 +1,43 @@
+public enum WeekDay {
+        MONDAY (1, 0),
+        TUESDAY (2, 0),
+        WEDNESDAY (3, 0),
+        THURSDAY (4,0),
+        FRIDAY(5,0),
+        SATURDAY (0,6),
+        SUNDAY (0,7);
+
+        private int weekDay;
+        private int weekEnd;
+
+        WeekDay(int weekDay, int weekEnd) {
+        this.weekDay = weekDay;
+        this.weekEnd = weekEnd;
+
+    }
+    public boolean isWeekEnd() {
+        if (weekEnd > 5)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean isWeekDay(){
+        if (!isWeekEnd())
+            return true;
+        else
+            return false;
+    }
+
+    // boolean isWeekDay(){ return this.ordinal() < 5; }
+        //boolean isWeekEnd(){ return !isWeekDay(); }
+
+
+    public static void main(String[] args) {
+        System.out.println(MONDAY.isWeekDay());
+        System.out.println(SUNDAY.isWeekDay());
+        System.out.println(MONDAY.isWeekEnd());
+        System.out.println(SUNDAY.isWeekEnd());
+
+    }
+}
